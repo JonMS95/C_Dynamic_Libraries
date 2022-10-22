@@ -17,7 +17,7 @@ void manageAndPrint(int x, int y, char* DL_path)
 
     if (libHandle == NULL)
     {
-        perror("dlopen:");
+        perror("dlopen");
     }
 
     arithPtr = dlsym(libHandle, "function");
