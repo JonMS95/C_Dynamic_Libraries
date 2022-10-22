@@ -6,6 +6,14 @@
 #define ARGUMENT_NUMBER_MESSAGE "Only two arguments should be passed on the command line!\r\n"
 #define NON_ZERO_MESSAGE        "Both arguments should be non-zero integers!\r\n"
 
+/*
+@brief Takes the two numbers that have been passed by command line and the path
+to the library that's meant to be dynamically loaded.
+@param x First number.
+@param y Second number.
+@param DL_path Path to the dynamic library.
+@return Void.
+*/
 void manageAndPrint(int x, int y, char* DL_path)
 {
     void* libHandle;
@@ -31,6 +39,9 @@ void manageAndPrint(int x, int y, char* DL_path)
     dlclose(libHandle);
 }
 
+/*
+@brief Main function. Program's entry point.
+*/
 int main(int argc, char** argv)
 {
     if (argc != CORRECT_ARGC_VALUE)
