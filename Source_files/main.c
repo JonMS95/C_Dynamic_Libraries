@@ -47,8 +47,8 @@ int main(int argc, char** argv)
         printf(NON_ZERO_MESSAGE);
     }
 
-    char* mult_DL_Path = "../Dynamic_libraries/libmult.so";
-    char* div_DL_Path = "../Dynamic_libraries/libdiv.so";
+    char* mult_DL_Path = "/home/jon/Desktop/scripts/C_Dynamic_Libraries/Dynamic_libraries/mult.so";
+    char* div_DL_Path = "/home/jon/Desktop/scripts/C_Dynamic_Libraries/Dynamic_libraries/div.so";
 
     manageAndPrint(x, y, mult_DL_Path);
     manageAndPrint(x, y, div_DL_Path);
