@@ -11,6 +11,8 @@ so_div		= Dynamic_libraries/div.so
 
 exe_main	= Executable_files/main
 
+all: clean main.o mult.o div.o main mult.so div.so
+
 main.o: $(src_main)
 	gcc -c $(src_main) -o $(obj_main)
 
