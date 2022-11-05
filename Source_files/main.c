@@ -1,10 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <dlfcn.h>
-
-#define CORRECT_ARGC_VALUE      3
-#define ARGUMENT_NUMBER_MESSAGE "Only two arguments should be passed on the command line!\r\n"
-#define NON_ZERO_MESSAGE        "Both arguments should be non-zero integers!\r\n"
+#include "main.h"
 
 /*
 @brief Takes the two numbers that have been passed by command line and the path
@@ -58,8 +52,8 @@ int main(int argc, char** argv)
         printf(NON_ZERO_MESSAGE);
     }
 
-    char* mult_DL_Path = "/home/jon/Desktop/scripts/C_Dynamic_Libraries/Dynamic_libraries/mult.so";
-    char* div_DL_Path = "/home/jon/Desktop/scripts/C_Dynamic_Libraries/Dynamic_libraries/div.so";
+    char* mult_DL_Path = MULT_SO_PATH;
+    char* div_DL_Path = DIV_SO_PATH;
 
     manageAndPrint(x, y, mult_DL_Path);
     manageAndPrint(x, y, div_DL_Path);
