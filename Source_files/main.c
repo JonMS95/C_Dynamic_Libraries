@@ -6,6 +6,9 @@
 #define ARGUMENT_NUMBER_MESSAGE "Only two arguments should be passed on the command line!\r\n"
 #define NON_ZERO_MESSAGE        "Both arguments should be non-zero integers!\r\n"
 
+#define MULT_SO_PATH    "/home/jon/Desktop/scripts/C/C_Dynamic_Libraries_from_executable/Dynamic_libraries/mult.so"
+#define DIV_SO_PATH     "/home/jon/Desktop/scripts/C/C_Dynamic_Libraries_from_executable/Dynamic_libraries/div.so"
+
 /*
 @brief Takes the two numbers that have been passed by command line and the path
 to the library that's meant to be dynamically loaded.
@@ -58,8 +61,8 @@ int main(int argc, char** argv)
         printf(NON_ZERO_MESSAGE);
     }
 
-    char* mult_DL_Path = "/home/jon/Desktop/scripts/C_Dynamic_Libraries/Dynamic_libraries/mult.so";
-    char* div_DL_Path = "/home/jon/Desktop/scripts/C_Dynamic_Libraries/Dynamic_libraries/div.so";
+    char* mult_DL_Path = MULT_SO_PATH;
+    char* div_DL_Path = DIV_SO_PATH;
 
     manageAndPrint(x, y, mult_DL_Path);
     manageAndPrint(x, y, div_DL_Path);
