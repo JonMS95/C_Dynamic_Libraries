@@ -57,4 +57,6 @@ int main(int argc, char** argv)
 
     manageAndPrint(x, y, mult_DL_Path);
     manageAndPrint(x, y, div_DL_Path);
+
+    return 0;
 }
