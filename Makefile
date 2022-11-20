@@ -19,13 +19,13 @@ directories:
 	@./$(shell_dirs)
 
 main: $(src_main)
-	gcc $(src_main) -o $(exe_main) -ldl
+	gcc -g $(src_main) -o $(exe_main) -ldl
 
 mult.o: $(src_mult)
-	gcc -c -fPIC $(src_mult) -o $(obj_mult)
+	gcc -g -c -fPIC $(src_mult) -o $(obj_mult)
 
 div.o: $(src_div)
-	gcc -c -fPIC $(src_div) -o $(obj_div)
+	gcc -g -c -fPIC $(src_div) -o $(obj_div)
 
 mult.so: $(obj_mult)
 	gcc -shared $(obj_mult) -o $(so_mult)
