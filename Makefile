@@ -13,7 +13,8 @@ exe_main	= Executable_files/main
 shell_dirs	= Shell_files/directories.sh
 shell_test	= Shell_files/test.sh
 
-all: directories clean main mult.o div.o mult.so div.so rm_obj msg test
+# all: directories clean main mult.o div.o mult.so div.so rm_obj msg test
+all: directories clean main mult.so div.so rm_obj msg test
 
 directories:
 	@./$(shell_dirs)
@@ -21,17 +22,23 @@ directories:
 main: $(src_main)
 	gcc -g $(src_main) -o $(exe_main) -ldl
 
-mult.o: $(src_mult)
-	gcc -g -c -fPIC $(src_mult) -o $(obj_mult)
+# mult.o: $(src_mult)
+# 	gcc -g -c -fPIC $(src_mult) -o $(obj_mult)
 
-div.o: $(src_div)
-	gcc -g -c -fPIC $(src_div) -o $(obj_div)
+# div.o: $(src_div)
+# 	gcc -g -c -fPIC $(src_div) -o $(obj_div)
 
-mult.so: $(obj_mult)
-	gcc -shared $(obj_mult) -o $(so_mult)
+# mult.so: $(obj_mult)
+# 	gcc -shared $(obj_mult) -o $(so_mult)
 
-div.so: $(obj_div)
-	gcc -shared $(obj_div) -o $(so_div)
+# div.so: $(obj_div)
+# 	gcc -shared $(obj_div) -o $(so_div)
+
+mult.so: $(src_mult)
+	gcc -g -fPIC -shared $(src_mult) -o $(so_mult)
+
+div.so: $(src_div)
+	gcc -g -fPIC -shared $(src_div) -o $(so_div)
 
 rm_obj:
 	rm -rf Object_files
